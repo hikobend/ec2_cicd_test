@@ -25,8 +25,10 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           instance-ids: ${{ env.EC2_INSTANCE_ID }}
 
-          working-directory: /home/ubuntu
-          command: deployer.sh
+          working-directory: /home/ubuntu/application
+          command: ls -al
+          comment: Hello world!
 
-      - name: Show the deployment result
-        run: echo "Deployment completed."
+      # Catch SSM outputs
+      - name: Get the outputs
+        run: echo "The Command id is ${{ steps.ssm.outputs.command-id }}"
