@@ -1,0 +1,40 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  AWS_REGION: ap-northeast-1
+  EC2_INSTANCE_ID: i-024d5255bcc2e76ca
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+
+    - name: Connect to EC2 Instance using SSM
+      uses: aws-actions/aws-ssm-action@v1
+      with:
+        ssm-document-name: AWS-StartSSHSession
+        instance-ids: ${{ env.EC2_INSTANCE_ID }}
+        region: ${{ env.AWS_REGION }}
+
+    - name: Run Docker Compose
+      run: |
+        docker-compose up -d
+
+    - name: Stop Docker Compose
+      run: |
+        docker-compose down
