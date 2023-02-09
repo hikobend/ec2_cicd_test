@@ -27,3 +27,6 @@ jobs:
 
           working-directory: /home/ubuntu
           command: deployer.sh
+
+      - name: Show the deployment result
+        run: echo "Deployment completed."
