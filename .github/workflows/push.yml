@@ -25,9 +25,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           instance-ids: ${{ env.EC2_INSTANCE_ID }}
 
-          working-directory: /home/ubuntu/application
-          command: ls -al
-          comment: Hello world!
+          working-directory: /root/hello-world-docker
+          command: cp ec2 /root/hello-world-docker
+          comment: copy done
 
       # Catch SSM outputs
       - name: Get the outputs
