@@ -16,18 +16,27 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: AWS SSM Send-Command
-        uses: peterkimzz/aws-ssm-send-command@master
-        id: ssm
-        with:
-          aws-region: ${{ env.AWS_REGION }}
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          instance-ids: ${{ env.EC2_INSTANCE_ID }}
+      # - name: AWS SSM Send-Command
+      #   uses: peterkimzz/aws-ssm-send-command@master
+      #   id: ssm
+      #   with:
+      #     aws-region: ${{ env.AWS_REGION }}
+      #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #     instance-ids: ${{ env.EC2_INSTANCE_ID }}
 
-          working-directory: /home/ubuntu
-          command: deployer.sh
+      #     working-directory: /home/ubuntu
+      #     command: deployer.sh
 
       # Catch SSM outputs
-      - name: Get the outputs
-        run: echo "The Command id is ${{ steps.ssm.outputs.command-id }}"
+      - name: step1
+        run: aws ssm start-session --target i-024d5255bcc2e76ca
+
+      - name: step2
+        run: sudo su --login
+
+      - name: step3
+        run: cd ec2_cicd_test
+
+      - name: step4
+        run: cd git pullz
