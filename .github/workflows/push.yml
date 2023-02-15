@@ -97,8 +97,5 @@ jobs:
       - name: Pull the latest code from GitHub
         run: |
           sudo -i
-
-      - name: change root
-        run: |
           cd /root/ec2_cicd_test
           git pull origin main
