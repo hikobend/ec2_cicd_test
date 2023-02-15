@@ -16,16 +16,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      # - name: AWS SSM Send-Command
-      #   uses: peterkimzz/aws-ssm-send-command@master
-      #   id: ssm
-      #   with:
-      #     aws-region: ${{ env.AWS_REGION }}
-      #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      #     instance-ids: ${{ env.EC2_INSTANCE_ID }}
+      - name: AWS SSM Send-Command
+        uses: peterkimzz/aws-ssm-send-command@master
+        id: ssm
+        with:
+          aws-region: ${{ env.AWS_REGION }}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          instance-ids: ${{ env.EC2_INSTANCE_ID }}
 
-      #     working-directory: /home/ubuntu
+          working-directory: /root/ec2_cicd_test
       #     command: deployer.sh
 
       # Catch SSM outputs
