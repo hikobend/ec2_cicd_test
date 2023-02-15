@@ -85,6 +85,7 @@ jobs:
       #     sudo dpkg -i /tmp/amazon-ssm-agent.deb
       #     sudo systemctl enable amazon-ssm-agent
       #     sudo systemctl start amazon-ssm-agent
+
       - name: Connect to EC2 instance using SSM
         env:
           AWS_REGION: ${{ env.AWS_REGION }}
@@ -92,8 +93,8 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
           aws ssm start-session --target ${{ env.EC2_INSTANCE_ID }} --region ${{ env.AWS_REGION }}
+
       - name: Pull the latest code from GitHub
         run: |
-          sudo su --login root
-          cd /home/ubuntu/ec2_cicd_test
+          cd /root/ec2_cicd_test
           git pull origin main
