@@ -33,7 +33,7 @@ jobs:
       #   run: aws ssm start-session --target i-024d5255bcc2e76ca
 
       - name: step2
-        run: sudo su --login
+        run: sudo su --login root
 
       - name: step3
         run: cd /root/ec2_cicd_test
