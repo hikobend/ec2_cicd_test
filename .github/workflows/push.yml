@@ -29,14 +29,14 @@ jobs:
       #     command: deployer.sh
 
       # Catch SSM outputs
-      - name: step1
-        run: aws ssm start-session --target i-024d5255bcc2e76ca
+      # - name: step1
+      #   run: aws ssm start-session --target i-024d5255bcc2e76ca
 
-      - name: step2
-        run: sudo su --login
+      # - name: step2
+      #   run: sudo su --login
 
-      - name: step3
-        run: cd ec2_cicd_test
+      # - name: step3
+      #   run: cd ec2_cicd_test
 
       - name: step4
-        run: cd git pullz
+        run: cd git pull
