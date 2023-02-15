@@ -77,14 +77,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Install AWS CLI and Session Manager plugin
-        run: |
-          sudo apt-get update && sudo apt-get install -y awscli
-          aws configure set plugins.session-manager https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb
-          aws s3 cp s3://amazon-ssm-REGION/latest/debian_amd64/amazon-ssm-agent.deb /tmp/amazon-ssm-agent.deb
-          sudo dpkg -i /tmp/amazon-ssm-agent.deb
-          sudo systemctl enable amazon-ssm-agent
-          sudo systemctl start amazon-ssm-agent
+      # - name: Install AWS CLI and Session Manager plugin
+      #   run: |
+      #     sudo apt-get update && sudo apt-get install -y awscli
+      #     aws configure set plugins.session-manager https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb
+      #     aws s3 cp s3://amazon-ssm-REGION/latest/debian_amd64/amazon-ssm-agent.deb /tmp/amazon-ssm-agent.deb
+      #     sudo dpkg -i /tmp/amazon-ssm-agent.deb
+      #     sudo systemctl enable amazon-ssm-agent
+      #     sudo systemctl start amazon-ssm-agent
       - name: Connect to EC2 instance using SSM
         env:
           AWS_REGION: ${{ env.AWS_REGION }}
