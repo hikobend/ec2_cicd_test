@@ -104,9 +104,10 @@ jobs:
           instance-ids: ${{ env.EC2_INSTANCE_ID }}
 
           working-directory: /root/ec2_cicd_test
+        run: git pull
 
-      - name: Pull the latest code from GitHub
-        run: |
-          sudo -i
-          cd /root/ec2_cicd_test
-          git pull origin main
+      # - name: Pull the latest code from GitHub
+      #   run: |
+      #     sudo -i
+      #     cd /root/ec2_cicd_test
+      #     git pull origin main
