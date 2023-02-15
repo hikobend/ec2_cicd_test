@@ -26,11 +26,11 @@ jobs:
           instance-ids: ${{ env.EC2_INSTANCE_ID }}
 
           working-directory: /root/ec2_cicd_test
-      #     command: deployer.sh
+          command: deployer.sh
 
       # Catch SSM outputs
-      # - name: step1
-      #   run: aws ssm start-session --target i-024d5255bcc2e76ca
+      - name: step1
+        run: aws ssm start-session --target i-024d5255bcc2e76ca
 
       - name: step2
         run: sudo su --login root
