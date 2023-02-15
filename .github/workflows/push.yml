@@ -107,4 +107,5 @@ jobs:
 
       - name: Pull the latest code from GitHub
         run: |
+          pwd
           git pull origin main
