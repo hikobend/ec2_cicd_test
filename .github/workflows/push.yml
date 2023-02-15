@@ -52,9 +52,18 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y python3-pip
           sudo pip3 install awscli
+
+      - name: AWS SSM Send-Command
+        uses: peterkimzz/aws-ssm-send-command@master
+        id: ssm
+        with:
+          aws-region: ${{ env.AWS_REGION }}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          instance-ids: ${{ env.EC2_INSTANCE_ID }}
+
       - name: Connect to EC2 using SSM
         run: |
-          aws configure
           aws ssm start-session --target i-024d5255bcc2e76ca  --region ap-northeast-1
       - name: Deploy code to EC2
         run: |
