@@ -9,82 +9,12 @@ env:
   AWS_REGION: ap-northeast-1
   EC2_INSTANCE_ID: i-024d5255bcc2e76ca
 
-# jobs:
-#   start:
-#     runs-on: ubuntu-latest
-
-#     steps:
-#       - uses: actions/checkout@v2
-
-#       - name: AWS SSM Send-Command
-#         uses: peterkimzz/aws-ssm-send-command@master
-#         id: ssm
-#         with:
-#           aws-region: ${{ env.AWS_REGION }}
-#           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-#           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-#           instance-ids: ${{ env.EC2_INSTANCE_ID }}
-
-#           working-directory: /root/ec2_cicd_test
-#           # command: deployer.sh
-
-#       # Catch SSM outputs
-#       - name: step1
-#         run: aws ssm start-session --target i-024d5255bcc2e76ca
-
-#       - name: step2
-#         run: sudo su --login root
-
-#       - name: step3
-#         run: cd /root/ec2_cicd_test
-
-#       - name: step4
-#         run: git pull
-
-# jobs:
-#   deploy:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Checkout code
-#         uses: actions/checkout@v2
-#       - name: Install AWS CLI
-#         run: |
-#           sudo apt-get update
-#           sudo apt-get install -y python3-pip
-#           sudo pip3 install awscli
-
-#       - name: AWS SSM Send-Command
-#         uses: peterkimzz/aws-ssm-send-command@master
-#         id: ssm
-#         with:
-#           aws-region: ${{ env.AWS_REGION }}
-#           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-#           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-#           instance-ids: ${{ env.EC2_INSTANCE_ID }}
-
-#       - name: Connect to EC2 using SSM
-#         run: |
-#           aws ssm start-session --target i-024d5255bcc2e76ca  --region ap-northeast-1
-#       - name: Deploy code to EC2
-#         run: |
-#           sudo su --login root
-#           cd /root/ec2_cicd_test
-#           git pull
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      # - name: Install AWS CLI and Session Manager plugin
-      #   run: |
-      #     sudo apt-get update && sudo apt-get install -y awscli
-      #     aws configure set plugins.session-manager https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb
-      #     aws s3 cp s3://amazon-ssm-REGION/latest/debian_amd64/amazon-ssm-agent.deb /tmp/amazon-ssm-agent.deb
-      #     sudo dpkg -i /tmp/amazon-ssm-agent.deb
-      #     sudo systemctl enable amazon-ssm-agent
-      #     sudo systemctl start amazon-ssm-agent
 
       - name: Connect to EC2 instance using SSM
         env:
@@ -92,7 +22,7 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
-          aws ssm start-session --target ${{ env.EC2_INSTANCE_ID }} --region ${{ env.AWS_REGION }}
+          aws ssm start-session --target ${{ env.EC2_INSTANCE_ID }} --region ${{ env.AWS_REGION }} --document-name AWS-StartSSHSession --parameters 'portNumber=["22"],user="root"'
       - name: AWS SSM Send-Command
         uses: peterkimzz/aws-ssm-send-command@master
         id: ssm
@@ -106,7 +36,5 @@ jobs:
 
       - name: Pull the latest code from GitHub
         run: |
-          sudo -i
-          whoami
           cd /root/ec2_cicd_test
           git pull origin main
