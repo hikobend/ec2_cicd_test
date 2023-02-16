@@ -36,6 +36,6 @@ jobs:
 
       - name: Pull the latest code from GitHub
         run: |
-          sudo chown -R $root:$user /root/ec2_cicd_test
+          sudo chown -R ssm-user:ssm-user /root/ec2_cicd_test
           cd /root/ec2_cicd_test
           git pull origin main
