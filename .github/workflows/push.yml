@@ -23,7 +23,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
           aws ssm start-session --target ${{ env.EC2_INSTANCE_ID }} --region ${{ env.AWS_REGION }} --document-name AWS-StartInteractiveCommand --parameters 'command=sudo su -'
-          cd ec2_cicd_test
+          cd /root/ec2_cicd_test
           git pull origin main
 
       # - name: AWS SSM Send-Command
