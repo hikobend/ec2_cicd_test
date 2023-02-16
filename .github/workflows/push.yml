@@ -93,7 +93,6 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
           aws ssm start-session --target ${{ env.EC2_INSTANCE_ID }} --region ${{ env.AWS_REGION }}
-
       - name: AWS SSM Send-Command
         uses: peterkimzz/aws-ssm-send-command@master
         id: ssm
@@ -107,5 +106,7 @@ jobs:
 
       - name: Pull the latest code from GitHub
         run: |
-          pwd
+          sudo -i
+          whoami
+          cd /root/ec2_cicd_test
           git pull origin main
