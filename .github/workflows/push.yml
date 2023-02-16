@@ -32,7 +32,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           instance-ids: ${{ env.EC2_INSTANCE_ID }}
 
-          working-directory: /root/ec2_cicd_test
+          working-directory: /home/runner/work/
 
       - name: Pull the latest code from GitHub
         run: |
