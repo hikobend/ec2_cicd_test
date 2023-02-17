@@ -9,6 +9,34 @@ env:
   AWS_REGION: ap-northeast-1
   EC2_INSTANCE_ID: i-024d5255bcc2e76ca
 
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install AWS CLI
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y awscli
+        aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws configure set region ${{ env.AWS_REGION }}
+
+    - name: Connect to EC2 instance
+      run: |
+        aws ssm start-session --target i-024d5255bcc2e76ca
+
+    - name: Change to code directory
+      run: |
+        cd /root/ec2_cicd_test
+
+    - name: Copy code from GitHub
+      run: |
+        git pull origin main
+
 # jobs:
 #   deploy:
 #     runs-on: ubuntu-latest
@@ -27,28 +55,3 @@ env:
 #           sudo chmod 777 /root/ec2_cicd_test
 #           cd /root/ec2_cicd_test
 #           git pull origin main
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Install AWS CLI
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y awscli
-
-    - name: Connect to EC2 instance
-      run: |
-        aws ssm start-session --target i-024d5255bcc2e76ca
-
-    - name: Change to code directory
-      run: |
-        cd /root/ec2_cicd_test
-
-    - name: Copy code from GitHub
-      run: |
-        git pull origin main
