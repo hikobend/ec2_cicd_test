@@ -43,7 +43,7 @@ jobs:
 
     - name: Connect to EC2 instance
       run: |
-        aws ssm start-session --target instance-id
+        aws ssm start-session --target i-024d5255bcc2e76ca
 
     - name: Change to code directory
       run: |
