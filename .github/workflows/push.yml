@@ -31,6 +31,7 @@ jobs:
 
     - name: Change to code directory
       run: |
+        sudo chmod 777 /root/ec2_cicd_test
         cd /root/ec2_cicd_test
 
     - name: Copy code from GitHub
