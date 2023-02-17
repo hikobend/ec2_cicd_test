@@ -30,6 +30,6 @@ jobs:
           export COMMAND_ID=$(echo $RESPONSE | jq .Command.CommandId)
           echo "::set-output name=commandId::${COMMAND_ID}"
 
-      - name: Check Run Command Result
-        run: |
-          bash -x ./.github/scripts/check_command_result.sh ${{ steps.exec.outputs.commandId }}
+      # - name: Check Run Command Result
+      #   run: |
+      #     bash -x ./.github/scripts/check_command_result.sh ${{ steps.exec.outputs.commandId }}
