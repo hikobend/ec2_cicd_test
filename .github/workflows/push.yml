@@ -1,59 +1,35 @@
-name: AWS SSM Send-Command Example
-
+name: Deploy to Sandbox
 on:
   push:
     branches:
-    - main
+      - main
 
 env:
-  AWS_REGION: ap-northeast-1
-  EC2_INSTANCE_ID: i-024d5255bcc2e76ca
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
-    - name: Install AWS CLI
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y awscli
-        aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws configure set region ${{ env.AWS_REGION }}
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ env.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ env.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-northeast-1
 
-    - name: Connect to EC2 instance
-      run: |
-        aws ssm start-session --target i-024d5255bcc2e76ca
+      - name: Execute SSM Run Command
+        id: exec
+        run: |
+          export RESPONSE=$(aws ssm send-command --document-name "AWS-RunShellScript" --document-version "1" --targets '[{"Key":"InstanceIds","Values":["i-024d5255bcc2e76ca"]}]' --parameters '{"workingDirectory":[""],"executionTimeout":["3600"],"commands":["sudo -i","cd /root/ec2_cicd_test","git pull",""]}' --timeout-seconds 600 --max-concurrency "50" --max-errors "0" --region ap-northeast-1)
+          export COMMAND_ID=$(echo $RESPONSE | jq .Command.CommandId)
+          echo "::set-output name=commandId::${COMMAND_ID}"
 
-    - name: Change to code directory
-      run: |
-        sudo mkdir -p /root/ec2_cicd_test
-        sudo chmod 777 /root/ec2_cicd_test
-        cd /root/ec2_cicd_test
-
-    - name: Copy code from GitHub
-      run: |
-        git pull origin main
-
-# jobs:
-#   deploy:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Checkout code
-#         uses: actions/checkout@v2
-
-#       - name: Connect to EC2 instance using SSM
-#         env:
-#           AWS_REGION: ${{ env.AWS_REGION }}
-#           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-#           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-#         run: |
-#           aws ssm start-session --target ${{ env.EC2_INSTANCE_ID }} --region ${{ env.AWS_REGION }} --document-name AWS-StartInteractiveCommand --parameters 'command=sudo su -'
-#           sudo mkdir -p /root/ec2_cicd_test
-#           sudo chmod 777 /root/ec2_cicd_test
-#           cd /root/ec2_cicd_test
-#           git pull origin main
+      - name: Check Run Command Result
+        run: |
+          bash -x ./.github/scripts/check_command_result.sh ${{ steps.exec.outputs.commandId }}
