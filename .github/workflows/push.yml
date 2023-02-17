@@ -16,27 +16,28 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Connect to EC2 instance using SSM
-        env:
-          AWS_REGION: ${{ env.AWS_REGION }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        run: |
-          aws ssm start-session --target ${{ env.EC2_INSTANCE_ID }} --region ${{ env.AWS_REGION }} --document-name AWS-StartInteractiveCommand --parameters 'command=sudo su -'
-          sudo mkdir -p /root/ec2_cicd_test
-          sudo chmod 777 /root/ec2_cicd_test
-          cd /root/ec2_cicd_test
-          git pull origin main
+      # - name: Connect to EC2 instance using SSM
+      #   env:
+      #     AWS_REGION: ${{ env.AWS_REGION }}
+      #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #   run: |
+      #     aws ssm start-session --target ${{ env.EC2_INSTANCE_ID }} --region ${{ env.AWS_REGION }} --document-name AWS-StartInteractiveCommand --parameters 'command=sudo su -'
+      #     sudo chmod 777 /root/ec2_cicd_test
+      #     cd /root/ec2_cicd_test
+      #     git pull origin main
 
-      # - name: AWS SSM Send-Command
-      #   uses: peterkimzz/aws-ssm-send-command@master
-      #   id: ssm
-      #   with:
-      #     aws-region: ${{ env.AWS_REGION }}
-      #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      #     instance-ids: ${{ env.EC2_INSTANCE_ID }}
-      #     working-directory: /root/ec2_cicd_test
+      - name: AWS SSM Send-Command
+        uses: peterkimzz/aws-ssm-send-command@master
+        id: ssm
+        with:
+          aws-region: ${{ env.AWS_REGION }}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          instance-ids: ${{ env.EC2_INSTANCE_ID }}
+          working-directory: /root/ec2_cicd_test
+
+          command: aws ssm start-session --target i-024d5255bcc2e76ca --document-name AWS-StartInteractiveCommand --parameters 'command=sudo su -' && cd ec2_cicd_test && git pull origin main
 
       # - name: Pull the latest code from GitHub
       #   run: |
