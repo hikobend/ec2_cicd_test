@@ -8,7 +8,7 @@ env:
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   AWS_REGION: ap-northeast-1
-  AWS_ROLE_ARN: arn:aws:iam::021077554300:role/cicd_role
+  AWS_ROLE_ARN: arn:aws:iam::021077554300:role/cicd_zenn_test
 
 permissions:
   id-token: write
