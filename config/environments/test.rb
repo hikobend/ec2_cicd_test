@@ -6,7 +6,7 @@ require "active_support/core_ext/integer/time"
 # and recreated between test runs. Don't rely on the data there!
 
 Rails.application.configure do
-  config.hosts.clear
+  config.hosts << "micro-alb-484569792.ap-northeast-1.elb.amazonaws.com"
   # Settings specified here will take precedence over those in config/application.rb.
 
   config.cache_classes = false
