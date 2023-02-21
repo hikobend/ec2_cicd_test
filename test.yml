@@ -1,5 +1,0 @@
-echo "::set-output name={name}::{value}"
-echo "{name}={value}" >> $GITHUB_OUTPUT
-
-echo "::set-output name=commandId::${COMMAND_ID}"
-echo "commandId=${COMMAND_ID} >> $GITHUB_OUTPUT"
