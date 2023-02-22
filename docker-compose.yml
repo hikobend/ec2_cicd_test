@@ -1,10 +1,26 @@
 version: '3'
-
 services:
-  nginx:
-    build: ./
-    image: dockerdemo
+  db:
+    image: mysql:8.0
+    platform: linux/x86_64
+    environment:
+      MYSQL_ROOT_PASSWORD: password
     ports:
-      - 80:80
+      - '3306:3306'
+    command: --default-authentication-plugin=mysql_native_password
     volumes:
-      - ./src:/usr/share/nginx/html
+      - mysql-data:/var/lib/mysql
+  web:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/myapp
+    ports:
+      - "80:3000"
+    depends_on:
+      - db
+    stdin_open: true
+    tty: true
+volumes:
+  mysql-data:
+    driver: local
