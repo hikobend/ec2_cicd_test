@@ -21,11 +21,11 @@ services:
       - db
     stdin_open: true
     tty: true
-    logging:
-      driver: awslogs
-      options:
-        awslogs-region: ap-northeast-1
-        awslogs-group: rails-log-test
+    # logging:
+    #   driver: awslogs
+    #   options:
+    #     awslogs-region: ap-northeast-1
+    #     awslogs-group: rails-log-test
 volumes:
   mysql-data:
     driver: local
