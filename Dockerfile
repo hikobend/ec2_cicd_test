@@ -1,3 +1,2 @@
-FROM nginx:1.17.5
-
-COPY ./html /usr/share/nginx/html
+FROM nginx:latest
+RUN service nginx start
