@@ -1,49 +1,9 @@
-# name: Deploy to Sandbox
-# on:
-#   push:
-#     branches:
-#       - main
-
-# env:
-#   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-#   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-#   AWS_REGION: ap-northeast-1
-#   AWS_ROLE_ARN: arn:aws:iam::021077554300:role/cicd_role
-
-# permissions:
-#   id-token: write
-#   contents: read
-# jobs:
-#   deploy:
-#     runs-on: ubuntu-latest
-
-#     steps:
-#       - uses: aws-actions/configure-aws-credentials@v1
-#         with:
-#           role-to-assume: ${{ env.AWS_ROLE_ARN }}
-#           aws-region: ${{ env.AWS_REGION }}
-
-#       - name: Execute SSM Run Command
-#         run: |
-#           export RESPONSE=$(aws ssm send-command --document-name "AWS-RunShellScript" --document-version "1" --targets '[{"Key":"InstanceIds","Values":["i-0653a560e2d13c68b"]}]' --parameters '{"workingDirectory":[""],"executionTimeout":["3600"],"commands":["sudo -i","cd /root/ec2_cicd_test","git pull",""]}' --timeout-seconds 600 --max-concurrency "50" --max-errors "0" --region ap-northeast-1)
-#           export COMMAND_ID=$(echo $RESPONSE | jq .Command.CommandId)
-#           echo "commandId=${COMMAND_ID} >> $GITHUB_OUTPUT"
-
-
 name: Build and Push
 
 on:
   push:
     tags:
       - v*
-
-env:
-  AWS_ROLE_ARN: arn:aws:iam::021077554300:role/cicd_role
-  AWS_REGION: ap-northeast-1
-
-permissions:
-  id-token: write
-  contents: read
 
 jobs:
   build-and-push:
@@ -54,14 +14,20 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - uses: aws-actions/configure-aws-credentials@v1
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
       with:
-        role-to-assume: ${{ env.AWS_ROLE_ARN }}
-        aws-region: ${{ env.AWS_REGION }}
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ap-northeast-1
 
-    - name: Execute SSM Run Command
+    - name: remove docker image
+      env:
+        REGION: ap-northeast-1
+        INSTANCE_ID: i-0653a560e2d13c68b
+        COMMAND: 'sudo -i && docker rm -f $(docker ps -aq)'
       run: |
-        export RESPONSE=$(aws ssm send-command --document-name "AWS-RunShellScript" --document-version "1" --targets '[{"Key":"InstanceIds","Values":["i-0653a560e2d13c68b"]}]' --parameters '{"workingDirectory":[""],"executionTimeout":["3600"],"commands":["sudo -i","docker rm -f $(docker ps -aq)"]}' --timeout-seconds 600 --max-concurrency "50" --max-errors "0" --region ap-northeast-1)
+        export RESPONSE=$(aws ssm send-command --document-name "AWS-RunShellScript" --document-version "1" --targets '[{"Key":"InstanceIds","Values":["'"$INSTANCE_ID"'"]}]' --parameters '{"workingDirectory":[""],"executionTimeout":["3600"],"commands":["'"$COMMAND"'"]}' --timeout-seconds 600 --max-concurrency "50" --max-errors "0" --region $REGION)
         export COMMAND_ID=$(echo $RESPONSE | jq .Command.CommandId)
         echo "commandId=${COMMAND_ID} >> $GITHUB_OUTPUT"
 
@@ -78,7 +44,7 @@ jobs:
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
-    - name: Execute SSM Run Command
+    - name: run push docker image
       env:
         REGION: ap-northeast-1
         INSTANCE_ID: i-0653a560e2d13c68b
