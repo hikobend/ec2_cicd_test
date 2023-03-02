@@ -53,6 +53,12 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ap-northeast-1
 
+    - name: Execute SSM Run Command
+      run: |
+        export RESPONSE=$(aws ssm send-command --document-name "AWS-RunShellScript" --document-version "1" --targets '[{"Key":"InstanceIds","Values":["i-0653a560e2d13c68b"]}]' --parameters '{"workingDirectory":[""],"executionTimeout":["3600"],"commands":["sudo -i","docker rm -f $(docker ps -aq)"]}' --timeout-seconds 600 --max-concurrency "50" --max-errors "0" --region ap-northeast-1)
+        export COMMAND_ID=$(echo $RESPONSE | jq .Command.CommandId)
+        echo "commandId=${COMMAND_ID} >> $GITHUB_OUTPUT"
+
     - name: Login to Amazon ECR
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
@@ -66,18 +72,10 @@ jobs:
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
-    - name: Pull Docker image
-      env:
-        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: ${{ secrets.AWS_ECR_REPO_NAME }}
+    - name: Execute SSM Run Command
       run: |
-        docker pull $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-
-    - name: Run Docker container
-      env:
-        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: ${{ secrets.AWS_ECR_REPO_NAME }}
-      run: |
-        docker run -d -p 80:80 $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        export RESPONSE=$(aws ssm send-command --document-name "AWS-RunShellScript" --document-version "1" --targets '[{"Key":"InstanceIds","Values":["i-0653a560e2d13c68b"]}]' --parameters '{"workingDirectory":[""],"executionTimeout":["3600"],"commands":["sudo -i","docker run -d -p 80:80 021077554300.dkr.ecr.ap-northeast-1.amazonaws.com/sample-nginx:v1.0.12"]}' --timeout-seconds 600 --max-concurrency "50" --max-errors "0" --region ap-northeast-1)
+        export COMMAND_ID=$(echo $RESPONSE | jq .Command.CommandId)
+        echo "commandId=${COMMAND_ID} >> $GITHUB_OUTPUT"
 
 # docker rm -f $(docker ps -aq)
