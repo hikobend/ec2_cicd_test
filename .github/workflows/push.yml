@@ -37,6 +37,10 @@ on:
     tags:
       - v*
 
+env:
+  AWS_ROLE_ARN: arn:aws:iam::021077554300:role/cicd_role
+  AWS_REGION: ap-northeast-1
+
 permissions:
   id-token: write
   contents: read
