@@ -37,8 +37,9 @@ on:
     tags:
       - v*
 
-# env:
-#   AWS_CONTAINER:
+permissions:
+  id-token: write
+  contents: read
 
 jobs:
   build-and-push:
@@ -49,12 +50,10 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v1
+    - uses: aws-actions/configure-aws-credentials@v1
       with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: ap-northeast-1
+        role-to-assume: ${{ env.AWS_ROLE_ARN }}
+        aws-region: ${{ env.AWS_REGION }}
 
     - name: Execute SSM Run Command
       run: |
