@@ -1,6 +1,7 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+  config.web_console.allowed_ips = '0.0.0.0/0'
   config.hosts << "micro-alb-484569792.ap-northeast-1.elb.amazonaws.com"
   # Settings specified here will take precedence over those in config/application.rb.
 
