@@ -34,8 +34,8 @@ name: Build and Push
 
 on:
   push:
-    tags:
-      - v*
+    branches:
+      - main
 
 jobs:
   build-and-push:
@@ -65,3 +65,5 @@ jobs:
         IMAGE_TAG=$(echo ${{ github.ref }} | sed -e "s#refs/tags/##g")
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+
+# docker rm -f $(docker ps -aq)
