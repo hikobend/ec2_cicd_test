@@ -34,15 +34,11 @@ jobs:
         docker tag compose-nginx:latest 021077554300.dkr.ecr.ap-northeast-1.amazonaws.com/compose-nginx:latest
         docker push 021077554300.dkr.ecr.ap-northeast-1.amazonaws.com/compose-nginx:latest
 
-    - name: Save IMAGE_TAG to .env file
-      run: |
-        echo "IMAGE_TAG=${{ env.IMAGE_TAG }}" >> .env
-
     - name: remove docker image
       env:
         REGION: ap-northeast-1
         INSTANCE_ID: i-0653a560e2d13c68b
-        COMMAND: 'sudo -i && docker-compose pull && docker compose --env-file .env up -d'
+        COMMAND: 'sudo -i && docker-compose pull && docker-compose up -d'
       run: |
         export RESPONSE=$(aws ssm send-command --document-name "AWS-RunShellScript" --document-version "1" --targets '[{"Key":"InstanceIds","Values":["'"$INSTANCE_ID"'"]}]' --parameters '{"workingDirectory":[""],"executionTimeout":["3600"],"commands":["'"$COMMAND"'"]}' --timeout-seconds 600 --max-concurrency "50" --max-errors "0" --region $REGION)
         export COMMAND_ID=$(echo $RESPONSE | jq .Command.CommandId)
