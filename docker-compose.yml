@@ -2,6 +2,6 @@ version: '3'
 
 services:
   nginx:
-    image: 021077554300.dkr.ecr.ap-northeast-1.amazonaws.com/compose-nginx:$${{ github.ref_name }}
+    image: 021077554300.dkr.ecr.ap-northeast-1.amazonaws.com/compose-nginx:${IMAGE_TAG}
     ports:
       - 80:80
