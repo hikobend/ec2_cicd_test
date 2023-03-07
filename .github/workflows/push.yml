@@ -2,8 +2,8 @@ name: Build and Push
 
 on:
   push:
-    tags:
-      - v*
+    branches:
+      - main
 
 jobs:
   build-and-push:
@@ -30,9 +30,9 @@ jobs:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: ${{ secrets.AWS_ECR_REPO_NAME }}
       run: |
-        IMAGE_TAG=$(echo ${{ github.ref }} | sed -e "s#refs/tags/##g")
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        docker build -t compose-nginx . --platform linux/amd64
+        docker tag compose-nginx:latest 021077554300.dkr.ecr.ap-northeast-1.amazonaws.com/compose-nginx:latest
+        docker push 021077554300.dkr.ecr.ap-northeast-1.amazonaws.com/compose-nginx:latest
 
     - name: Save IMAGE_TAG to .env file
       run: |
