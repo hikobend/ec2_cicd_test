@@ -1,31 +1,37 @@
 version: '3'
 services:
   web:
-    image: 021077554300.dkr.ecr.ap-northeast-1.amazonaws.com/rails_test:latest
-    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    # build: .でdocker-compose.ymlと同じフォルダにDockerfileがあることを示す
+    image: 021077554300.dkr.ecr.ap-northeast-1.amazonaws.com/rails_test
+    # 毎回 rm tmp/pids/server.pid するのも手間であるため、・事前に手元で/tmp/pids/server.pidを削除する
+    command: /bin/sh -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3001 -b '0.0.0.0'"
     volumes:
-      - .:/myapp
+      - .:/app
     ports:
-      - "80:3000"
+      - 80:3001
     depends_on:
       - db
-    stdin_open: true
+    # railsでpryする用
+    # true を指定することでコンテナを起動させ続けることができます。
     tty: true
-    logging:
-      driver: awslogs
-      options:
-        awslogs-region: ap-northeast-1
-        awslogs-group: rails-log-test
+    # stdin_openとは標準入出力とエラー出力をコンテナに結びつける設定です。
+    stdin_open: true
   db:
-    platform: linux/x86_64
-    image: mysql:8.0
+    image: mysql:5.7
+    # M1のCPUは、linux/arm64/v8なのですが、使用しようとしたimageがこれに対応していないというエラーが起きる
+    # m1はplatformを指定して、linux/amd64にエミュレートする指定をすることで正常に動くようになります
+    platform: linux/amd64
+    # DBのレコードが日本語だと文字化けするので、utf8をセットする
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
+    volumes:
+      - db-volume:/var/lib/mysql
+    # 環境変数
     environment:
       MYSQL_ROOT_PASSWORD: password
+      TZ: "Asia/Tokyo"
     ports:
-      - '3306:3306'
-    command: --default-authentication-plugin=mysql_native_password
-    volumes:
-      - mysql-data:/var/lib/mysql
+      - "3306:3306"
+# PC上にdb-volumeという名前でボリューム（データ領域）が作成される
+# コンテナを作り直したとしてもPC上に残るようにするために設定
 volumes:
-  mysql-data:
-    driver: local
+  db-volume:
