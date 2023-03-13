@@ -41,11 +41,7 @@ jobs:
 
       # EC2にdocker-compose.ymlだけ置いて実行
     - name: remove docker image
-      env:
-        REGION: ap-northeast-1
-        INSTANCE_ID: i-0653a560e2d13c68b
-        COMMAND: 'sudo -i && cd /root && docker-compose pull && docker-compose up -d'
       run: |
-        export RESPONSE=$(aws ssm send-command --document-name "AWS-RunShellScript" --document-version "1" --targets '[{"Key":"InstanceIds","Values":["'"$INSTANCE_ID"'"]}]' --parameters '{"workingDirectory":[""],"executionTimeout":["3600"],"commands":["'"$COMMAND"'"]}' --timeout-seconds 600 --max-concurrency "50" --max-errors "0" --region $REGION)
+        export RESPONSE=$(aws ssm send-command --document-name "AWS-RunShellScript" --document-version "1" --targets '[{"Key":"InstanceIds","Values":["i-0278a0585c410c6d2"]}]' --parameters '{"workingDirectory":[""],"executionTimeout":["3600"],"commands":["sudo -i","cd /root","docker-compose pull","docker-compose up -d"]}' --timeout-seconds 600 --max-concurrency "50" --max-errors "0" --region ap-northeast-1)
         export COMMAND_ID=$(echo $RESPONSE | jq .Command.CommandId)
         echo "commandId=${COMMAND_ID} >> $GITHUB_OUTPUT"
