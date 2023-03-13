@@ -1,4 +1,8 @@
 FROM ruby:3.1
+
+# config.hostsにALBのホスト名を追加
+RUN echo "config.hosts << 'micro-alb-484569792.ap-northeast-1.elb.amazonaws.com'" >> /app/config/environments/production.rb
+
 ARG RUBYGEMS_VERSION=3.3.20
 RUN mkdir /app
 WORKDIR /app
