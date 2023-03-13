@@ -1,6 +1,7 @@
 require "active_support/core_ext/integer/time"
 
 # The test environment is used exclusively to run your application's
+config.hosts << "micro-alb-484569792.ap-northeast-1.elb.amazonaws.com"
 # test suite. You never need to work with it otherwise. Remember that
 # your test database is "scratch space" for the test suite and is wiped
 # and recreated between test runs. Don't rely on the data there!
