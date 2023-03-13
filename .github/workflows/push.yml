@@ -39,6 +39,7 @@ jobs:
       run: |
         docker-compose pull
 
+      # EC2にdocker-compose.ymlだけ置いて実行
     - name: remove docker image
       env:
         REGION: ap-northeast-1
