@@ -24,3 +24,6 @@ services:
       - "3306:3306"
 volumes:
   db-volume:
+
+# この構成だとGemfileが必要になる。
+# EC2にdocker-compose.ymlだけ置いて環境を動かしたい
