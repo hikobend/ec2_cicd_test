@@ -1,0 +1,2 @@
+module TestPathHelper
+end
