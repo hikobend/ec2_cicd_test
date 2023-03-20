@@ -8,3 +8,9 @@
 Post.create!(
   title: 'タイトル'
 )
+Post.create!(
+  title: 'タイトル2'
+)
+Post.create!(
+  title: 'タイトル3'
+)
