@@ -3,7 +3,7 @@ FROM nginx:latest
 # デフォルトで用意されている個別設定ファイルを削除
 RUN rm -f /etc/nginx/conf.d/*
 
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY ./docker/nginx/nginx.conf /etc/nginx/nginx.conf
 # COPY ./nginx.conf /etc/nginx/nginx.conf
 
 # Nginxをforeground起動
