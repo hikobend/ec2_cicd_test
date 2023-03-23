@@ -1,4 +1,4 @@
-name: Build and Push
+name: Rails Nginx
 
 on:
   push:

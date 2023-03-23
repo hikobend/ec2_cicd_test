@@ -3,7 +3,7 @@ FROM ruby:3.1
 ENV LANG C.UTF-8
 ENV APP_ROOT /app
 ENV BUNDLE_JOBS 4
-ENV BUNDLER_VERSION 2.2.25
+ENV BUNDLER_VERSION 2.3.14
 
 RUN mkdir $APP_ROOT
 WORKDIR $APP_ROOT
@@ -18,7 +18,7 @@ RUN bundle install
 COPY . $APP_ROOT
 
 # Add a script to be executed every time the container starts.
-COPY ./docker/web/entrypoint.sh /usr/bin/
+COPY ./entrypoint.sh /usr/bin/
 # COPY ./entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]

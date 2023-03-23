@@ -1,4 +1,4 @@
-name: Build and Push
+name: S3
 
 on:
   push:

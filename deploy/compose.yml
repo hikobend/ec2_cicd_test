@@ -23,7 +23,7 @@ services:
       - '3306:3306'
     command: --default-authentication-plugin=mysql_native_password
     volumes:
-      - ./volumes/mysql/data/:/var/lib/mysql
+      - db-volume:/var/lib/mysql
 
   nginx:
     image: 021077554300.dkr.ecr.ap-northeast-1.amazonaws.com/nginx_test:latest
@@ -31,3 +31,5 @@ services:
       - "80:80"
     depends_on:
       - web
+volumes:
+  db-volume:
