@@ -3,10 +3,6 @@ version: '3'
 services:
   web:
     image: 021077554300.dkr.ecr.ap-northeast-1.amazonaws.com/rails_test:latest
-    # volumes:
-    #   - .:/app
-    #   - public:/app/public
-    #   - tmp:/app/tmp
     depends_on:
       - db
     stdin_open: true
@@ -31,15 +27,7 @@ services:
 
   nginx:
     image: 021077554300.dkr.ecr.ap-northeast-1.amazonaws.com/nginx_test:latest
-    # volumes:
-    #   - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
-    #   - public:/app/public
-    #   - tmp:/app/tmp
     ports:
       - "80:80"
     depends_on:
       - web
-
-# volumes:
-#   tmp:
-#   public:
