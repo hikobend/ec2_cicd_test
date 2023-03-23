@@ -1,0 +1,32 @@
+name: Build and Push
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+
+    runs-on: ubuntu-18.04
+    timeout-minutes: 300
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ap-northeast-1
+
+    - name: copy local to s3
+      run: |
+        aws s3 cp deploy/compose.yml ${{ secrets.AWS_S3 }}
+
+    - name: copy s3 to ec2
+      run: |
+        export RESPONSE=$(aws ssm send-command --document-name "AWS-RunShellScript" --document-version "1" --targets '[{"Key":"InstanceIds","Values":["i-0278a0585c410c6d2"]}]' --parameters '{"workingDirectory":[""],"executionTimeout":["3600"],"commands":["sudo -i","cd /root","aws s3 cp s3://set-compose.yml-file-to-ec2/compose.yml /root"]}' --timeout-seconds 600 --max-concurrency "50" --max-errors "0" --region ap-northeast-1)
+        export COMMAND_ID=$(echo $RESPONSE | jq .Command.CommandId)
+        echo "commandId=${COMMAND_ID} >> $GITHUB_OUTPUT"
