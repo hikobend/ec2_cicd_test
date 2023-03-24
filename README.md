@@ -1,24 +1,23 @@
-# README
+![チャート](chart.png)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- RailsとNginxを手動でECRに保存
 
-Things you may want to cover:
+  .github/workflows/Rails.yml : RailsをECRに保存
 
-* Ruby version
+  .github/workflows/Nginx.yml : NginxをECRに保存
 
-* System dependencies
+- deploy/にあるdocker-compose.ymlをEC2におくファイル
 
-* Configuration
+  .github/workflows/S3.yml name: copy local to s3
 
-* Database creation
+- S3に置いたdocker-compose.ymlをEC2にコピー
 
-* Database initialization
+  .github/workflows/S3.yml name: copy s3 to ec2
 
-* How to run the test suite
+- EC2からECRに保存したdockerimageをpull
 
-* Services (job queues, cache servers, search engines, etc.)
+  .github/workflows/EC2.yml
 
-* Deployment instructions
+  主要コマンド pull, migrate:reset, seed:replant, up -d
 
-* ...
+Railsをpumaで起動、サーバーはnginx。
