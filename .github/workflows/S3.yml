@@ -25,6 +25,6 @@ jobs:
 
     - name: copy s3 to ec2
       run: |
-        export RESPONSE=$(aws ssm send-command --document-name "AWS-RunShellScript" --document-version "1" --targets '[{"Key":"InstanceIds","Values":["i-0278a0585c410c6d2"]}]' --parameters '{"workingDirectory":[""],"executionTimeout":["3600"],"commands":["sudo -i","cd /root","rm -f docker-compose.yml","aws s3 cp s3://set-compose.yml-file-to-ec2/compose.yml /root"]}' --timeout-seconds 600 --max-concurrency "50" --max-errors "0" --region ap-northeast-1)
+        export RESPONSE=$(aws ssm send-command --document-name "AWS-RunShellScript" --document-version "1" --targets '[{"Key":"InstanceIds","Values":["i-0278a0585c410c6d2"]}]' --parameters '{"workingDirectory":[""],"executionTimeout":["3600"],"commands":["sudo -i","cd /root","rm -f docker-compose.yml","aws s3 cp s3://set-compose.yml-file-to-ec2/docker-compose.yml /root"]}' --timeout-seconds 600 --max-concurrency "50" --max-errors "0" --region ap-northeast-1)
         export COMMAND_ID=$(echo $RESPONSE | jq .Command.CommandId)
         echo "commandId=${COMMAND_ID} >> $GITHUB_OUTPUT"
