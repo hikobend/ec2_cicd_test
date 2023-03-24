@@ -8,3 +8,4 @@
 Post.create(title: "title1")
 Post.create(title: "title2")
 Post.create(title: "title3")
+Post.create(title: "title4")
