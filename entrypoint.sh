@@ -1,8 +1,10 @@
 #!/bin/bash
 set -e
 
-# Remove a potentially pre-existing server.pid for Rails.
+# rm ではrailsのpidを削除
+# Rails に対応したファイル server.pid が存在しているかもしれないので削除する。
 rm -f /app/tmp/pids/server.pid
 
-# Then exec the container's main process (what's set as CMD in the Dockerfile).
+# exec "$@"でCMDで渡されたコマンドを実行しています。(→rails s)
+# コンテナのプロセスを実行する。（Dockerfile 内の CMD に設定されているもの。）
 exec "$@"
