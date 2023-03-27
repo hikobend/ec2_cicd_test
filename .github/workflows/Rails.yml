@@ -26,7 +26,7 @@ jobs:
     - name: Rails
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: ${{ secrets.AWS_ECR_REPO_NAME }}
+        ECR_REPOSITORY: ${{ secrets.AWS_ECR_REPO_NAME_RAILS }}
       run: |
         docker build -t rails_test . --platform linux/amd64
         docker tag rails_test:latest 021077554300.dkr.ecr.ap-northeast-1.amazonaws.com/rails_test:latest
