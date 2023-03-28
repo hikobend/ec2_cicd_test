@@ -1,0 +1,871 @@
+---
+=== puma startup: 2023-03-24 04:49:32 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-24 04:50:16 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-24 04:51:28 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-24 04:52:25 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-24 04:53:52 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-24 04:59:15 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-24 05:06:38 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-24 05:14:52 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-24 05:16:36 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-24 05:17:47 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-24 06:48:24 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-24 06:49:22 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-24 06:56:45 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-24 07:00:20 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-24 07:14:27 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-24 09:49:54 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-24 10:04:27 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-24 10:09:27 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-24 10:10:36 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-24 10:13:06 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-24 10:13:34 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-24 10:30:18 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-24 10:36:58 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-27 06:15:00 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 01:57:46 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 02:02:31 +0000 ===
+Started GET "/" for 172.18.0.1 at 2023-03-28 02:02:35 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by TestController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering test/index.html.erb within layouts/application
+  Rendered test/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 392)
+  Rendered layout layouts/application.html.erb (Duration: 272.0ms | Allocations: 87587)
+Completed 200 OK in 285ms (Views: 276.3ms | ActiveRecord: 0.0ms | Allocations: 91790)
+
+
+Started GET "/test/1" for 172.18.0.1 at 2023-03-28 02:02:41 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TestController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (3.3ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/test_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering test/show.html.erb within layouts/application
+  Rendered test/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 145)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 2674)
+Completed 200 OK in 46ms (Views: 14.4ms | ActiveRecord: 8.6ms | Allocations: 9561)
+
+
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 02:17:59 +0000 ===
+Started GET "/test/1" for 172.18.0.1 at 2023-03-28 02:18:05 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by TestController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/test_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering test/show.html.erb within layouts/application
+  Rendered test/show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 328)
+  Rendered layout layouts/application.html.erb (Duration: 96.3ms | Allocations: 34785)
+Completed 200 OK in 121ms (Views: 99.1ms | ActiveRecord: 4.9ms | Allocations: 44250)
+
+
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 02:19:19 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 03:14:18 +0000 ===
+=== puma startup: 2023-03-28 03:19:05 +0000 ===
+=== puma startup: 2023-03-28 03:51:12 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 03:53:20 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 03:54:18 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 05:44:24 +0000 ===
+I, [2023-03-28T05:44:31.289239 #1]  INFO -- : Started GET "/" for 172.23.0.1 at 2023-03-28 05:44:31 +0000
+I, [2023-03-28T05:44:31.291133 #1]  INFO -- : Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+F, [2023-03-28T05:44:31.299131 #1] FATAL -- :
+ActiveRecord::ConnectionNotEstablished (Can't connect to MySQL server on 'db' (115)):
+
+activerecord (7.0.4.3) lib/active_record/connection_adapters/mysql2_adapter.rb:53:in `rescue in new_client'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/mysql2_adapter.rb:43:in `new_client'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/mysql2_adapter.rb:23:in `mysql2_connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `public_send'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `new_connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:700:in `checkout_new_connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:679:in `try_to_checkout_new_connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:640:in `acquire_connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:341:in `checkout'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:181:in `connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_handler.rb:211:in `retrieve_connection'
+activerecord (7.0.4.3) lib/active_record/connection_handling.rb:313:in `retrieve_connection'
+activerecord (7.0.4.3) lib/active_record/connection_handling.rb:280:in `connection'
+activerecord (7.0.4.3) lib/active_record/migration.rb:613:in `connection'
+activerecord (7.0.4.3) lib/active_record/migration.rb:608:in `build_watcher'
+activerecord (7.0.4.3) lib/active_record/migration.rb:590:in `block in call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4.3) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:27:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+D, [2023-03-28T05:44:31.348047 #1] DEBUG -- :   Rendering layout /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/layout.erb
+D, [2023-03-28T05:44:31.349724 #1] DEBUG -- :   Rendering /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+D, [2023-03-28T05:44:31.353085 #1] DEBUG -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_message_and_suggestions.html.erb (Duration: 1.1ms | Allocations: 678)
+D, [2023-03-28T05:44:31.354377 #1] DEBUG -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_actions.html.erb (Duration: 0.3ms | Allocations: 191)
+D, [2023-03-28T05:44:31.356182 #1] DEBUG -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (Duration: 1.0ms | Allocations: 1971)
+D, [2023-03-28T05:44:31.358081 #1] DEBUG -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (Duration: 0.9ms | Allocations: 1502)
+D, [2023-03-28T05:44:31.373164 #1] DEBUG -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (Duration: 0.7ms | Allocations: 1643)
+D, [2023-03-28T05:44:31.411743 #1] DEBUG -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (Duration: 0.5ms | Allocations: 861)
+D, [2023-03-28T05:44:31.413098 #1] DEBUG -- :   Rendering /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+I, [2023-03-28T05:44:31.414519 #1]  INFO -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (Duration: 0.6ms | Allocations: 337)
+I, [2023-03-28T05:44:31.415353 #1]  INFO -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (Duration: 64.5ms | Allocations: 68077)
+I, [2023-03-28T05:44:31.419551 #1]  INFO -- :   Rendered layout /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/layout.erb (Duration: 69.9ms | Allocations: 68554)
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 05:45:37 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 05:56:49 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 05:57:31 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+
+---
+=== puma startup: 2023-03-28 06:03:00 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 06:09:44 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 06:35:33 +0000 ===
+I, [2023-03-28T06:35:38.179628 #1]  INFO -- : Started GET "/" for 172.27.0.1 at 2023-03-28 06:35:38 +0000
+I, [2023-03-28T06:35:38.181551 #1]  INFO -- : Cannot render console from 172.27.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+F, [2023-03-28T06:35:38.194410 #1] FATAL -- :
+ActiveRecord::ConnectionNotEstablished (Host '172.27.0.3' is not allowed to connect to this MySQL server):
+
+activerecord (7.0.4.3) lib/active_record/connection_adapters/mysql2_adapter.rb:53:in `rescue in new_client'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/mysql2_adapter.rb:43:in `new_client'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/mysql2_adapter.rb:23:in `mysql2_connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `public_send'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `new_connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:700:in `checkout_new_connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:679:in `try_to_checkout_new_connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:640:in `acquire_connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:341:in `checkout'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:181:in `connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_handler.rb:211:in `retrieve_connection'
+activerecord (7.0.4.3) lib/active_record/connection_handling.rb:313:in `retrieve_connection'
+activerecord (7.0.4.3) lib/active_record/connection_handling.rb:280:in `connection'
+activerecord (7.0.4.3) lib/active_record/migration.rb:613:in `connection'
+activerecord (7.0.4.3) lib/active_record/migration.rb:608:in `build_watcher'
+activerecord (7.0.4.3) lib/active_record/migration.rb:590:in `block in call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4.3) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:27:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+D, [2023-03-28T06:35:38.243375 #1] DEBUG -- :   Rendering layout /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/layout.erb
+D, [2023-03-28T06:35:38.244402 #1] DEBUG -- :   Rendering /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+D, [2023-03-28T06:35:38.247511 #1] DEBUG -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_message_and_suggestions.html.erb (Duration: 0.8ms | Allocations: 678)
+D, [2023-03-28T06:35:38.248992 #1] DEBUG -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_actions.html.erb (Duration: 0.3ms | Allocations: 191)
+D, [2023-03-28T06:35:38.251189 #1] DEBUG -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (Duration: 1.4ms | Allocations: 1971)
+D, [2023-03-28T06:35:38.253067 #1] DEBUG -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (Duration: 1.0ms | Allocations: 1502)
+D, [2023-03-28T06:35:38.271159 #1] DEBUG -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (Duration: 0.8ms | Allocations: 1643)
+D, [2023-03-28T06:35:38.282277 #1] DEBUG -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (Duration: 0.4ms | Allocations: 861)
+D, [2023-03-28T06:35:38.283342 #1] DEBUG -- :   Rendering /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+I, [2023-03-28T06:35:38.284701 #1]  INFO -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (Duration: 0.4ms | Allocations: 337)
+I, [2023-03-28T06:35:38.285544 #1]  INFO -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (Duration: 40.3ms | Allocations: 68076)
+I, [2023-03-28T06:35:38.287082 #1]  INFO -- :   Rendered layout /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/layout.erb (Duration: 42.7ms | Allocations: 68553)
+I, [2023-03-28T06:35:44.978208 #1]  INFO -- : Started GET "/" for 172.27.0.1 at 2023-03-28 06:35:44 +0000
+I, [2023-03-28T06:35:44.986121 #1]  INFO -- : Cannot render console from 172.27.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+F, [2023-03-28T06:35:45.016301 #1] FATAL -- :
+ActiveRecord::ConnectionNotEstablished (Host '172.27.0.3' is not allowed to connect to this MySQL server):
+
+activerecord (7.0.4.3) lib/active_record/connection_adapters/mysql2_adapter.rb:53:in `rescue in new_client'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/mysql2_adapter.rb:43:in `new_client'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/mysql2_adapter.rb:23:in `mysql2_connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `public_send'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `new_connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:700:in `checkout_new_connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:679:in `try_to_checkout_new_connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:640:in `acquire_connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:341:in `checkout'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:181:in `connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_handler.rb:211:in `retrieve_connection'
+activerecord (7.0.4.3) lib/active_record/connection_handling.rb:313:in `retrieve_connection'
+activerecord (7.0.4.3) lib/active_record/connection_handling.rb:280:in `connection'
+activerecord (7.0.4.3) lib/active_record/migration.rb:613:in `connection'
+activerecord (7.0.4.3) lib/active_record/migration.rb:608:in `build_watcher'
+activerecord (7.0.4.3) lib/active_record/migration.rb:590:in `block in call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4.3) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:27:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+D, [2023-03-28T06:35:45.060598 #1] DEBUG -- :   Rendering layout /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/layout.erb
+D, [2023-03-28T06:35:45.061666 #1] DEBUG -- :   Rendering /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+D, [2023-03-28T06:35:45.065628 #1] DEBUG -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_message_and_suggestions.html.erb (Duration: 2.2ms | Allocations: 503)
+D, [2023-03-28T06:35:45.067311 #1] DEBUG -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_actions.html.erb (Duration: 0.2ms | Allocations: 185)
+D, [2023-03-28T06:35:45.069467 #1] DEBUG -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (Duration: 1.1ms | Allocations: 1960)
+D, [2023-03-28T06:35:45.071177 #1] DEBUG -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (Duration: 0.8ms | Allocations: 1478)
+D, [2023-03-28T06:35:45.087876 #1] DEBUG -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (Duration: 0.8ms | Allocations: 1643)
+D, [2023-03-28T06:35:45.099093 #1] DEBUG -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (Duration: 0.4ms | Allocations: 861)
+D, [2023-03-28T06:35:45.100449 #1] DEBUG -- :   Rendering /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+I, [2023-03-28T06:35:45.101465 #1]  INFO -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (Duration: 0.3ms | Allocations: 285)
+I, [2023-03-28T06:35:45.102331 #1]  INFO -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (Duration: 39.5ms | Allocations: 67381)
+I, [2023-03-28T06:35:45.103368 #1]  INFO -- :   Rendered layout /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/layout.erb (Duration: 41.7ms | Allocations: 67834)
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 06:37:53 +0000 ===
+I, [2023-03-28T06:38:01.111413 #1]  INFO -- : Started GET "/test/3" for 172.27.0.1 at 2023-03-28 06:38:01 +0000
+I, [2023-03-28T06:38:01.112680 #1]  INFO -- : Cannot render console from 172.27.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+F, [2023-03-28T06:38:01.124471 #1] FATAL -- :
+ActiveRecord::ConnectionNotEstablished (Host '172.27.0.3' is not allowed to connect to this MySQL server):
+
+activerecord (7.0.4.3) lib/active_record/connection_adapters/mysql2_adapter.rb:53:in `rescue in new_client'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/mysql2_adapter.rb:43:in `new_client'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/mysql2_adapter.rb:23:in `mysql2_connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `public_send'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `new_connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:700:in `checkout_new_connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:679:in `try_to_checkout_new_connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:640:in `acquire_connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:341:in `checkout'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:181:in `connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_handler.rb:211:in `retrieve_connection'
+activerecord (7.0.4.3) lib/active_record/connection_handling.rb:313:in `retrieve_connection'
+activerecord (7.0.4.3) lib/active_record/connection_handling.rb:280:in `connection'
+activerecord (7.0.4.3) lib/active_record/migration.rb:613:in `connection'
+activerecord (7.0.4.3) lib/active_record/migration.rb:608:in `build_watcher'
+activerecord (7.0.4.3) lib/active_record/migration.rb:590:in `block in call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4.3) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:27:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+D, [2023-03-28T06:38:01.169572 #1] DEBUG -- :   Rendering layout /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/layout.erb
+D, [2023-03-28T06:38:01.170971 #1] DEBUG -- :   Rendering /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+D, [2023-03-28T06:38:01.173773 #1] DEBUG -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_message_and_suggestions.html.erb (Duration: 0.6ms | Allocations: 678)
+D, [2023-03-28T06:38:01.175093 #1] DEBUG -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_actions.html.erb (Duration: 0.2ms | Allocations: 191)
+D, [2023-03-28T06:38:01.177340 #1] DEBUG -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (Duration: 1.1ms | Allocations: 1971)
+D, [2023-03-28T06:38:01.182203 #1] DEBUG -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (Duration: 0.9ms | Allocations: 1502)
+D, [2023-03-28T06:38:01.196962 #1] DEBUG -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (Duration: 0.8ms | Allocations: 1643)
+D, [2023-03-28T06:38:01.207895 #1] DEBUG -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (Duration: 0.4ms | Allocations: 861)
+D, [2023-03-28T06:38:01.208872 #1] DEBUG -- :   Rendering /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+I, [2023-03-28T06:38:01.210261 #1]  INFO -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (Duration: 0.4ms | Allocations: 337)
+I, [2023-03-28T06:38:01.211223 #1]  INFO -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (Duration: 39.0ms | Allocations: 67968)
+I, [2023-03-28T06:38:01.212503 #1]  INFO -- :   Rendered layout /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/layout.erb (Duration: 41.6ms | Allocations: 68445)
+I, [2023-03-28T06:38:04.872187 #1]  INFO -- : Started GET "/" for 172.27.0.1 at 2023-03-28 06:38:04 +0000
+I, [2023-03-28T06:38:04.875885 #1]  INFO -- : Cannot render console from 172.27.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+F, [2023-03-28T06:38:04.897714 #1] FATAL -- :
+ActiveRecord::ConnectionNotEstablished (Host '172.27.0.3' is not allowed to connect to this MySQL server):
+
+activerecord (7.0.4.3) lib/active_record/connection_adapters/mysql2_adapter.rb:53:in `rescue in new_client'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/mysql2_adapter.rb:43:in `new_client'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/mysql2_adapter.rb:23:in `mysql2_connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `public_send'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `new_connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:700:in `checkout_new_connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:679:in `try_to_checkout_new_connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:640:in `acquire_connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:341:in `checkout'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:181:in `connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_handler.rb:211:in `retrieve_connection'
+activerecord (7.0.4.3) lib/active_record/connection_handling.rb:313:in `retrieve_connection'
+activerecord (7.0.4.3) lib/active_record/connection_handling.rb:280:in `connection'
+activerecord (7.0.4.3) lib/active_record/migration.rb:613:in `connection'
+activerecord (7.0.4.3) lib/active_record/migration.rb:608:in `build_watcher'
+activerecord (7.0.4.3) lib/active_record/migration.rb:590:in `block in call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4.3) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:27:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+D, [2023-03-28T06:38:04.954488 #1] DEBUG -- :   Rendering layout /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/layout.erb
+D, [2023-03-28T06:38:04.956047 #1] DEBUG -- :   Rendering /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+D, [2023-03-28T06:38:04.960973 #1] DEBUG -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_message_and_suggestions.html.erb (Duration: 2.0ms | Allocations: 503)
+D, [2023-03-28T06:38:04.963045 #1] DEBUG -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_actions.html.erb (Duration: 0.3ms | Allocations: 185)
+D, [2023-03-28T06:38:04.965050 #1] DEBUG -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (Duration: 1.1ms | Allocations: 1960)
+D, [2023-03-28T06:38:04.968140 #1] DEBUG -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (Duration: 1.0ms | Allocations: 1478)
+D, [2023-03-28T06:38:04.985653 #1] DEBUG -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (Duration: 0.6ms | Allocations: 1643)
+D, [2023-03-28T06:38:04.996653 #1] DEBUG -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (Duration: 0.4ms | Allocations: 861)
+D, [2023-03-28T06:38:04.997684 #1] DEBUG -- :   Rendering /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+I, [2023-03-28T06:38:04.998755 #1]  INFO -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (Duration: 0.4ms | Allocations: 282)
+I, [2023-03-28T06:38:04.999405 #1]  INFO -- :   Rendered /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (Duration: 41.4ms | Allocations: 67381)
+I, [2023-03-28T06:38:05.001306 #1]  INFO -- :   Rendered layout /usr/local/bundle/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/templates/rescues/layout.erb (Duration: 45.4ms | Allocations: 67834)
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 06:41:18 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+
+
+
+---------
+
+
+
+
+
+
+=== puma startup: 2023-03-28 06:58:54 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 06:59:13 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 07:00:25 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 08:14:48 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 08:15:48 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 08:35:58 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 08:47:54 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 08:50:19 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 08:55:05 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 08:57:46 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 08:58:14 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 08:58:27 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 08:58:48 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 08:59:15 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 09:07:48 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 09:14:57 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 09:19:10 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 09:42:48 +0000 ===
+Started GET "/" for 172.19.0.1 at 2023-03-28 09:42:53 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by TestController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering test/index.html.erb within layouts/application
+  Rendered test/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 284)
+  Rendered layout layouts/application.html.erb (Duration: 93.5ms | Allocations: 34375)
+Completed 200 OK in 102ms (Views: 96.5ms | ActiveRecord: 0.0ms | Allocations: 37347)
+
+
+Started GET "/" for 172.19.0.1 at 2023-03-28 09:43:05 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TestController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering test/index.html.erb within layouts/application
+  Rendered test/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 21.7ms | Allocations: 2329)
+Completed 200 OK in 26ms (Views: 24.8ms | ActiveRecord: 0.0ms | Allocations: 2604)
+
+
+Started GET "/" for 172.19.0.1 at 2023-03-28 09:43:10 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TestController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering test/index.html.erb within layouts/application
+  Rendered test/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 2326)
+Completed 200 OK in 27ms (Views: 24.5ms | ActiveRecord: 0.0ms | Allocations: 2558)
+
+
+Started GET "/" for 172.19.0.1 at 2023-03-28 09:43:17 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TestController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering test/index.html.erb within layouts/application
+  Rendered test/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 2338)
+Completed 200 OK in 26ms (Views: 24.2ms | ActiveRecord: 0.0ms | Allocations: 2570)
+
+
+- Gracefully stopping, waiting for requests to finish
+Started GET "/" for 172.19.0.1 at 2023-03-28 09:48:17 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by TestController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering test/index.html.erb within layouts/application
+  Rendered test/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 284)
+  Rendered layout layouts/application.html.erb (Duration: 90.4ms | Allocations: 34696)
+Completed 200 OK in 99ms (Views: 93.4ms | ActiveRecord: 0.0ms | Allocations: 37668)
+
+
+Started GET "/" for 172.19.0.1 at 2023-03-28 09:48:19 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TestController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering test/index.html.erb within layouts/application
+  Rendered test/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 2353)
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.0ms | Allocations: 2628)
+
+
+Started GET "/" for 172.19.0.1 at 2023-03-28 09:48:27 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TestController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering test/index.html.erb within layouts/application
+  Rendered test/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 2347)
+Completed 200 OK in 28ms (Views: 26.6ms | ActiveRecord: 0.0ms | Allocations: 2579)
+
+
+Started GET "/" for 172.19.0.1 at 2023-03-28 09:48:27 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TestController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering test/index.html.erb within layouts/application
+  Rendered test/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 2347)
+Completed 200 OK in 25ms (Views: 24.2ms | ActiveRecord: 0.0ms | Allocations: 2579)
+
+
+Started GET "/test/3" for 172.19.0.1 at 2023-03-28 09:48:31 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TestController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (5.8ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/test_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering test/show.html.erb within layouts/application
+  Rendered test/show.html.erb within layouts/application (Duration: 3.2ms | Allocations: 145)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 2661)
+Completed 200 OK in 58ms (Views: 15.8ms | ActiveRecord: 19.6ms | Allocations: 9541)
+
+
+Started GET "/" for 172.19.0.1 at 2023-03-28 09:48:38 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TestController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering test/index.html.erb within layouts/application
+  Rendered test/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 2326)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.0ms | Allocations: 2558)
+
+
+Started GET "/" for 172.19.0.1 at 2023-03-28 09:48:39 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TestController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering test/index.html.erb within layouts/application
+  Rendered test/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 2340)
+Completed 200 OK in 26ms (Views: 24.8ms | ActiveRecord: 0.0ms | Allocations: 2568)
+
+
+Started GET "/" for 172.19.0.1 at 2023-03-28 09:48:43 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TestController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering test/index.html.erb within layouts/application
+  Rendered test/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 2332)
+Completed 200 OK in 34ms (Views: 32.1ms | ActiveRecord: 0.0ms | Allocations: 2560)
+
+
+Started GET "/" for 172.19.0.1 at 2023-03-28 09:48:44 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TestController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering test/index.html.erb within layouts/application
+  Rendered test/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 2331)
+Completed 200 OK in 26ms (Views: 24.4ms | ActiveRecord: 0.0ms | Allocations: 2559)
+
+
+Started GET "/" for 172.19.0.1 at 2023-03-28 09:48:44 +0000
+Cannot render console from 172.19.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TestController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering test/index.html.erb within layouts/application
+  Rendered test/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | Allocations: 2340)
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.0ms | Allocations: 2568)
+
+
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE DATABASE `app_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE `app_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (28.3ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (11.6ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT GET_LOCK('5277929974492897470', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreatePosts (20230324064713)
+  [1m[35m (10.6ms)[0m  [1m[35mCREATE TABLE `posts` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, `title` varchar(255))[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (3.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230324064713')[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.0ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2023-03-28 09:50:56.787944', '2023-03-28 09:50:56.787944')[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('5277929974492897470')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Create (1.1ms)[0m  [1m[32mINSERT INTO `posts` (`created_at`, `updated_at`, `title`) VALUES ('2023-03-28 09:50:58.229283', '2023-03-28 09:50:58.229283', 'title1')[0m
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO `posts` (`created_at`, `updated_at`, `title`) VALUES ('2023-03-28 09:50:58.237411', '2023-03-28 09:50:58.237411', 'title2')[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO `posts` (`created_at`, `updated_at`, `title`) VALUES ('2023-03-28 09:50:58.242572', '2023-03-28 09:50:58.242572', 'title3')[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO `posts` (`created_at`, `updated_at`, `title`) VALUES ('2023-03-28 09:50:58.248142', '2023-03-28 09:50:58.248142', 'title4')[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 172.20.0.1 at 2023-03-28 09:51:24 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by TestController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering test/index.html.erb within layouts/application
+  Rendered test/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 392)
+  Rendered layout layouts/application.html.erb (Duration: 264.1ms | Allocations: 87820)
+Completed 200 OK in 277ms (Views: 268.6ms | ActiveRecord: 0.0ms | Allocations: 92024)
+
+
+Started GET "/" for 172.20.0.1 at 2023-03-28 09:51:33 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TestController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering test/index.html.erb within layouts/application
+  Rendered test/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 2330)
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.0ms | Allocations: 2604)
+
+
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE DATABASE `app_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE `app_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (27.2ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT GET_LOCK('5277929974492897470', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreatePosts (20230324064713)
+  [1m[35m (11.6ms)[0m  [1m[35mCREATE TABLE `posts` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, `title` varchar(255))[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (3.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230324064713')[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.6ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2023-03-28 09:55:46.763019', '2023-03-28 09:55:46.763019')[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT RELEASE_LOCK('5277929974492897470')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Create (1.3ms)[0m  [1m[32mINSERT INTO `posts` (`created_at`, `updated_at`, `title`) VALUES ('2023-03-28 09:55:48.228064', '2023-03-28 09:55:48.228064', 'title1')[0m
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO `posts` (`created_at`, `updated_at`, `title`) VALUES ('2023-03-28 09:55:48.235603', '2023-03-28 09:55:48.235603', 'title2')[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Create (0.7ms)[0m  [1m[32mINSERT INTO `posts` (`created_at`, `updated_at`, `title`) VALUES ('2023-03-28 09:55:48.240912', '2023-03-28 09:55:48.240912', 'title3')[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO `posts` (`created_at`, `updated_at`, `title`) VALUES ('2023-03-28 09:55:48.246389', '2023-03-28 09:55:48.246389', 'title4')[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+=== puma startup: 2023-03-28 09:56:15 +0000 ===
+Started GET "/" for 172.21.0.1 at 2023-03-28 09:56:17 +0000
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by TestController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering test/index.html.erb within layouts/application
+  Rendered test/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 392)
+  Rendered layout layouts/application.html.erb (Duration: 263.5ms | Allocations: 90838)
+Completed 200 OK in 276ms (Views: 268.1ms | ActiveRecord: 0.0ms | Allocations: 95042)
+
+
+Started GET "/" for 172.21.0.1 at 2023-03-28 09:56:26 +0000
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TestController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering test/index.html.erb within layouts/application
+  Rendered test/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 2339)
+Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 0.0ms | Allocations: 2613)
+
+
+- Gracefully stopping, waiting for requests to finish
+Started GET "/" for 172.21.0.1 at 2023-03-28 09:57:28 +0000
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by TestController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering test/index.html.erb within layouts/application
+  Rendered test/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 284)
+  Rendered layout layouts/application.html.erb (Duration: 90.0ms | Allocations: 34378)
+Completed 200 OK in 97ms (Views: 92.6ms | ActiveRecord: 0.0ms | Allocations: 37350)
+
+
+Started GET "/" for 172.21.0.1 at 2023-03-28 09:57:43 +0000
+Cannot render console from 172.21.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TestController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering test/index.html.erb within layouts/application
+  Rendered test/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 2341)
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.0ms | Allocations: 2616)
+
+
+=== puma startup: 2023-03-28 10:11:21 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 10:14:20 +0000 ===
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 10:15:07 +0000 ===
+Started GET "/" for 172.25.0.1 at 2023-03-28 10:15:09 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+
+ActiveRecord::ConnectionNotEstablished (Can't connect to MySQL server on 'db' (115)):
+
+activerecord (7.0.4.3) lib/active_record/connection_adapters/mysql2_adapter.rb:53:in `rescue in new_client'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/mysql2_adapter.rb:43:in `new_client'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/mysql2_adapter.rb:23:in `mysql2_connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `public_send'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `new_connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:700:in `checkout_new_connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:679:in `try_to_checkout_new_connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:640:in `acquire_connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:341:in `checkout'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:181:in `connection'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/connection_handler.rb:211:in `retrieve_connection'
+activerecord (7.0.4.3) lib/active_record/connection_handling.rb:313:in `retrieve_connection'
+activerecord (7.0.4.3) lib/active_record/connection_handling.rb:280:in `connection'
+activerecord (7.0.4.3) lib/active_record/migration.rb:613:in `connection'
+activerecord (7.0.4.3) lib/active_record/migration.rb:608:in `build_watcher'
+activerecord (7.0.4.3) lib/active_record/migration.rb:590:in `block in call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4.3) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:27:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+- Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-28 10:19:55 +0000 ===
+Started GET "/" for 172.25.0.1 at 2023-03-28 10:19:59 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TestController#index as HTML
+  Rendered test/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 284)
+  Rendered layout layouts/application.html.erb (Duration: 88.3ms | Allocations: 34361)
+Completed 200 OK in 95ms (Views: 90.4ms | ActiveRecord: 0.0ms | Allocations: 37310)
+
+
+Started GET "/test/1" for 172.25.0.1 at 2023-03-28 10:20:06 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TestController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendered test/show.html.erb within layouts/application (Duration: 5.0ms | Allocations: 143)
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 2667)
+Completed 200 OK in 47ms (Views: 21.4ms | ActiveRecord: 8.2ms | Allocations: 9134)
+
+
+Started GET "/test/10" for 172.25.0.1 at 2023-03-28 10:20:12 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TestController#show as HTML
+  Parameters: {"id"=>"10"}
+Completed 404 Not Found in 6ms (ActiveRecord: 2.4ms | Allocations: 601)
+
+
+
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=10):
+
+app/controllers/test_controller.rb:6:in `show'
+- Gracefully stopping, waiting for requests to finish

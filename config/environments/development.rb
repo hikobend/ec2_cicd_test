@@ -69,5 +69,5 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
 
   config.logger = ActiveSupport::Logger.new("log/puma.stdout.log")
-
+  config.log_level = :info
 end
