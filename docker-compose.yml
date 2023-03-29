@@ -7,6 +7,7 @@ services:
       - .:/app
       - public-data:/app/public
       - tmp-data:/app/tmp
+      - log:/app/log
     depends_on:
       - db
     tty: true
@@ -35,3 +36,4 @@ volumes:
   db-volume:
   public-data:
   tmp-data:
+  log:

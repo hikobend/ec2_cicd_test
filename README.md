@@ -140,3 +140,6 @@ server {
   }
 }
 ```
+
+詳しい内容
+[自分のメモ](https://zenn.dev/articles/417eb925f7eb17/edit)

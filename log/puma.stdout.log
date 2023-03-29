@@ -869,3 +869,29 @@ ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=10):
 
 app/controllers/test_controller.rb:6:in `show'
 - Gracefully stopping, waiting for requests to finish
+=== puma startup: 2023-03-29 01:47:19 +0000 ===
+Started GET "/" for 172.25.0.1 at 2023-03-29 01:47:36 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TestController#index as HTML
+  Rendered test/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 284)
+  Rendered layout layouts/application.html.erb (Duration: 105.6ms | Allocations: 34342)
+Completed 200 OK in 115ms (Views: 108.1ms | ActiveRecord: 0.0ms | Allocations: 37291)
+
+
+Started GET "/" for 172.25.0.1 at 2023-03-29 01:47:43 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TestController#index as HTML
+  Rendered test/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 2363)
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 0.0ms | Allocations: 2627)
+
+
+Started GET "/" for 172.25.0.1 at 2023-03-29 01:47:44 +0000
+Cannot render console from 172.25.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TestController#index as HTML
+  Rendered test/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 2324)
+Completed 200 OK in 22ms (Views: 20.9ms | ActiveRecord: 0.0ms | Allocations: 2545)
+
+
+- Gracefully stopping, waiting for requests to finish

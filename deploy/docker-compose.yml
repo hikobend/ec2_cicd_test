@@ -1,4 +1,5 @@
 version: '3'
+
 services:
   web:
     image: 021077554300.dkr.ecr.ap-northeast-1.amazonaws.com/rails_test:latest
@@ -6,10 +7,12 @@ services:
     volumes:
       - public-data:/app/public
       - tmp-data:/app/tmp
+      - log:/app/log
     depends_on:
       - db
     tty: true
     stdin_open: true
+
   db:
     image: mysql:5.7
     platform: linux/amd64
@@ -21,6 +24,7 @@ services:
       TZ: "Asia/Tokyo"
     ports:
       - "3306:3306"
+
   nginx:
     image: 021077554300.dkr.ecr.ap-northeast-1.amazonaws.com/nginx_test:latest
     volumes:
@@ -30,9 +34,9 @@ services:
       - 80:80
     depends_on:
       - web
+
 volumes:
   db-volume:
   public-data:
   tmp-data:
-
-#
+  log:
