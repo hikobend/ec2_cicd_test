@@ -1178,3 +1178,4 @@ Processing by TestController#index as HTML
 Completed 200 OK in 105ms (Views: 97.3ms | ActiveRecord: 0.0ms | Allocations: 37856)
 
 
+- Gracefully stopping, waiting for requests to finish
